@@ -1,6 +1,6 @@
 <template>
   <div @click="onClickHandler()" class="coins-list__filter-item" v-show="coin.isActive">
-    1 {{coin.CharCode}} = {{coin.Value}} RUB
+    1 {{coin.CharCode}} = {{valute}} RUB
   </div>
 </template>
 <script>
@@ -25,6 +25,9 @@ export default {
     ...mapGetters([
       'DATA'
     ]),
+    valute: function () {
+      return (this.coin.Value / this.coin.Nominal).toFixed(2)
+    }
   },
 };
 </script>

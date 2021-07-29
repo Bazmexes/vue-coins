@@ -1,7 +1,7 @@
 <template>
   <div class="coins-list__current">
     <div class="coins-list__current-desc">
-      1 {{ currentCoin.CharCode }} = {{currentCoin.Value}} RUB
+      1 {{ currentCoin.CharCode }} = {{valute}} RUB
     </div>
     <coins-condition :condition="condition" :count="count"/>
   </div>
@@ -23,7 +23,7 @@ export default {
     },
   },
   computed: {
-    condition() {
+    condition: function () {
       let condition= null;
 
       if(this.currentCoin.Previous < this.currentCoin.Value) {
@@ -34,10 +34,13 @@ export default {
 
       return condition
     },
-    count() {
+    count: function () {
       let count = null;
       count = this.currentCoin.Value - this.currentCoin.Previous
       return count.toFixed(4)
+    },
+    valute: function () {
+      return (this.currentCoin.Value / this.currentCoin.Nominal).toFixed(2)
     }
   }
 };
