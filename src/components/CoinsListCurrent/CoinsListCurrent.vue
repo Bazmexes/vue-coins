@@ -36,7 +36,7 @@ export default {
     },
     count: function () {
       let count = null;
-      count = this.currentCoin.Value - this.currentCoin.Previous
+      count = this.currentCoin.Value / this.currentCoin.Nominal - this.currentCoin.Previous / this.currentCoin.Nominal
       return count.toFixed(4)
     },
     valute: function () {
