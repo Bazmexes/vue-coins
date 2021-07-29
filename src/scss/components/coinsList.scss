@@ -1,9 +1,10 @@
 .coins-list {
-  width: 100%;
   position: relative;
+  width: 100%;
+  margin-top: 30px;
   padding: 10px 15px;
+  border-radius: 5px;
   background-color: $color-white;
-  border-radius: 0 0 5px 5px;
 }
 
 .coins-list__form {
@@ -44,21 +45,25 @@
   display: flex;
   width: 100%;
   justify-content: space-around;
-  @include transition(background-color);
   cursor: pointer;
+  @include transition(background-color);
 
   &:hover {
     background-color: $color-silver;
   }
+
+  &--off {
+    display: none;
+  }
 }
 
-.coins-list-current {
+.coins-list__current {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px 0 15px;
 }
 
-.coins-condition {
+.coins__condition {
   display: inline-grid;
   align-items: center;
   grid-auto-flow: column;

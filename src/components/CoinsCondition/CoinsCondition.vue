@@ -1,5 +1,5 @@
 <template>
-  <div :class="!condition ? 'coins-condition': 'coins-condition coins-condition--red'">
+  <div :class="!condition ? 'coins__condition': 'coins__condition coins__condition--red'">
     <div class="coins-condition__figure"></div>
     {{count}}
   </div>
@@ -11,7 +11,7 @@ export default {
   name: "CoinsCondition",
   props: {
     count: {
-      type: Number,
+      type: String,
       default() {
         return 0;
       }

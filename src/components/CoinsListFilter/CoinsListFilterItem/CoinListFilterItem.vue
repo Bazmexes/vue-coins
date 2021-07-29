@@ -1,14 +1,12 @@
 <template>
-  <div class="coins-list__filter-item">
+  <div @click="onClickHandler()" class="coins-list__filter-item" v-show="coin.isActive">
     1 {{coin.CharCode}} = {{coin.Value}} RUB
   </div>
 </template>
-
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "CoinsListFilterItem",
-  components: {
-  },
   props: {
     coin: {
       type: Object,
@@ -16,6 +14,17 @@ export default {
         return {};
       },
     },
+  },
+  methods: {
+    ...mapActions(['changeCurrentCoinAction']),
+    onClickHandler: function () {
+      this.changeCurrentCoinAction(this.coin)
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'DATA'
+    ]),
   },
 };
 </script>

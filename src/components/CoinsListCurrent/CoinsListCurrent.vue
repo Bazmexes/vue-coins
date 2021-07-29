@@ -1,6 +1,6 @@
 <template>
-  <div class="coins-list-current">
-    <div class="coins-list-current__desc">
+  <div class="coins-list__current">
+    <div class="coins-list__current-desc">
       1 {{ currentCoin.CharCode }} = {{currentCoin.Value}} RUB
     </div>
     <coins-condition :condition="condition" :count="count"/>
