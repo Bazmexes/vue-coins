@@ -1,6 +1,6 @@
 <template>
   <div :class="!isActive ? 'coins-list__filter' : 'coins-list__filter coins-list__filter--active'">
-    <CoinListFilterItem v-for="coin, index in coins" :key="index" :coin="coin"/>
+    <coin-list-filter-item v-for="coin, index in coins" :key="index" :coin="coin"/>
   </div>
 </template>
 
