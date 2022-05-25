@@ -1,5 +1,4 @@
-# vue2-coins
-
+# попробовал vue 
 ## Project setup
 ```
 npm install
